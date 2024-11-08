@@ -41,7 +41,7 @@ export const NavigationBar = () => {
 			<div className="max-w-7xl mx-auto flex items-center justify-between p-4">
 				<div className="flex items-center">
 					<Link href="/" className="text-xl font-bold">
-						MyLogo
+						Okan Koca
 					</Link>
 				</div>
 				<div className="hidden md:flex space-x-8">
