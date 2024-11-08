@@ -28,6 +28,14 @@ export const NavigationBar = () => {
 		setTheme(theme === "dark" ? "light" : "dark");
 	};
 
+	const Toggle = () => {
+		return (
+			<Button onClick={toggleTheme} variant={"outline"}>
+				{theme === "dark" ? <MoonIcon /> : <SunIcon />}
+			</Button>
+		);
+	};
+
 	return (
 		<nav className="bg-background border-b border-separate">
 			<div className="max-w-7xl mx-auto flex items-center justify-between p-4">
@@ -40,13 +48,7 @@ export const NavigationBar = () => {
 					<NavigationMenu>
 						<NavigationMenuList className="space-x-5">
 							<NavigationMenuItem>
-								<Button onClick={toggleTheme}>
-									{theme === "dark" ? (
-										<MoonIcon />
-									) : (
-										<SunIcon />
-									)}
-								</Button>
+								<Toggle />
 							</NavigationMenuItem>
 							<NavigationMenuItem>
 								<NavigationMenuLink asChild>
@@ -81,8 +83,9 @@ export const NavigationBar = () => {
 						</NavigationMenuList>
 					</NavigationMenu>
 				</div>
-				{/* Mobile menu toggle */}
-				<div className="md:hidden">
+				{/* menu toggle here */}
+				<div className="md:hidden space-x-3">
+					<Toggle />
 					<Button
 						variant="ghost"
 						onClick={() => setNavbarOpen(!navbarOpen)}
@@ -95,25 +98,25 @@ export const NavigationBar = () => {
 					</Button>
 				</div>
 			</div>
-			{/* Mobile menu items */}
+			{/* menu items here */}
 			{navbarOpen && (
 				<div className="md:hidden">
 					<div className="flex flex-col space-y-2 px-4 pb-4">
 						<Link
 							href="/"
-							className="text-gray-800 hover:text-gray-600"
+							className="text-primary dark:hover:text-gray-300 hover:text-gray-600"
 						>
 							Home
 						</Link>
 						<Link
 							href="/projects"
-							className="text-gray-800 hover:text-gray-600"
+							className="text-primary dark:hover:text-gray-300 hover:text-gray-600"
 						>
 							Projects
 						</Link>
 						<Link
 							href="/contact"
-							className="text-gray-800 hover:text-gray-600"
+							className="text-primary dark:hover:text-gray-300 hover:text-gray-600"
 						>
 							Contact
 						</Link>
