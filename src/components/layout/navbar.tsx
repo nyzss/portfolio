@@ -2,7 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+	Bars3Icon,
+	MoonIcon,
+	SunIcon,
+	XMarkIcon,
+} from "@heroicons/react/24/outline";
 
 import {
 	NavigationMenu,
@@ -11,12 +16,20 @@ import {
 	NavigationMenuList,
 } from "../ui/navigation-menu";
 import { Button } from "../ui/button";
+import { useTheme } from "next-themes";
 
 export const NavigationBar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 
+	const { theme, setTheme, themes } = useTheme();
+
+	const toggleTheme = () => {
+		console.log("themes: ", themes);
+		setTheme(theme === "dark" ? "light" : "dark");
+	};
+
 	return (
-		<nav className="bg-white border-b border-gray-200">
+		<nav className="bg-background border-b border-separate">
 			<div className="max-w-7xl mx-auto flex items-center justify-between p-4">
 				<div className="flex items-center">
 					<Link href="/" className="text-xl font-bold">
@@ -25,32 +38,50 @@ export const NavigationBar = () => {
 				</div>
 				<div className="hidden md:flex space-x-8">
 					<NavigationMenu>
-						<NavigationMenuList>
+						<NavigationMenuList className="space-x-5">
 							<NavigationMenuItem>
-								<Link href="/" passHref>
-									<NavigationMenuLink className="text-gray-800 hover:text-gray-600">
+								<Button onClick={toggleTheme}>
+									{theme === "dark" ? (
+										<MoonIcon />
+									) : (
+										<SunIcon />
+									)}
+								</Button>
+							</NavigationMenuItem>
+							<NavigationMenuItem>
+								<NavigationMenuLink asChild>
+									<Link
+										href="/"
+										className="text-primary dark:hover:text-gray-300 hover:text-gray-600"
+									>
 										Home
-									</NavigationMenuLink>
-								</Link>
+									</Link>
+								</NavigationMenuLink>
 							</NavigationMenuItem>
 							<NavigationMenuItem>
-								<Link href="/projects" passHref>
-									<NavigationMenuLink className="text-gray-800 hover:text-gray-600">
+								<NavigationMenuLink asChild>
+									<Link
+										href="/projects"
+										className="text-primary dark:hover:text-gray-300 hover:text-gray-600"
+									>
 										Projects
-									</NavigationMenuLink>
-								</Link>
+									</Link>
+								</NavigationMenuLink>
 							</NavigationMenuItem>
 							<NavigationMenuItem>
-								<Link href="/contact" passHref>
-									<NavigationMenuLink className="text-gray-800 hover:text-gray-600">
+								<NavigationMenuLink asChild>
+									<Link
+										href="/contact"
+										className="text-primary dark:hover:text-gray-300 hover:text-gray-600"
+									>
 										Contact
-									</NavigationMenuLink>
-								</Link>
+									</Link>
+								</NavigationMenuLink>
 							</NavigationMenuItem>
 						</NavigationMenuList>
 					</NavigationMenu>
 				</div>
-				{/* mobile open here */}
+				{/* Mobile menu toggle */}
 				<div className="md:hidden">
 					<Button
 						variant="ghost"
@@ -64,7 +95,7 @@ export const NavigationBar = () => {
 					</Button>
 				</div>
 			</div>
-			{/* mobile */}
+			{/* Mobile menu items */}
 			{navbarOpen && (
 				<div className="md:hidden">
 					<div className="flex flex-col space-y-2 px-4 pb-4">
