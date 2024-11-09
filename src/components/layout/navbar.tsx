@@ -21,10 +21,9 @@ import { useTheme } from "next-themes";
 export const NavigationBar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 
-	const { theme, setTheme, themes } = useTheme();
+	const { theme, setTheme } = useTheme();
 
 	const toggleTheme = () => {
-		console.log("themes: ", themes);
 		setTheme(theme === "dark" ? "light" : "dark");
 	};
 
