@@ -35,6 +35,22 @@ body {
     }
 }
 
+@keyframes rotate-scale {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.05) rotate(180deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+.animate-rotate-scale {
+    animation: rotate-scale 20s infinite linear;
+}
+
 #blob {
     background-color: white;
     height: 34vmax;
@@ -50,21 +66,13 @@ body {
     position: fixed;
 }
 
-/*#blur {*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    position: absolute;*/
-/*    z-index: 2;*/
-/*    backdrop-filter: blur(12vmax);*/
-/*}*/
-
 #blur {
     height: 100vh;
     width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2; /* Keeps it on top of the blob */
+    z-index: 2;
     backdrop-filter: blur(12vmax);
 }
 

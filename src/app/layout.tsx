@@ -32,20 +32,20 @@ export default function RootLayout({
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-        <Providers>
-            <MouseFollow/>
-            <ThemeProvider
-                attribute={"class"}
-                defaultTheme={"system"}
-                enableSystem
-                // disableTransitionOnChange
-            >
+        <MouseFollow/>
+        <ThemeProvider
+            attribute={"class"}
+            defaultTheme={"system"}
+            enableSystem
+            // disableTransitionOnChange
+        >
+            <Providers>
                 <div className="flex flex-col min-h-screen">
                     <NavigationBar/>
                     <main className="flex-grow flex z-10">{children}</main>
                 </div>
-            </ThemeProvider>
-        </Providers>
+            </Providers>
+        </ThemeProvider>
         </body>
         </html>
     );
