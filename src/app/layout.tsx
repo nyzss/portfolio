@@ -4,6 +4,7 @@ import "./globals.css";
 import {NavigationBar} from "@/components/layout/navbar";
 import {ThemeProvider} from "@/components/theme-provider";
 import MouseFollow from "@/components/effects/mouse";
+import {Providers} from "@/components/effects/transition";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -38,10 +39,12 @@ export default function RootLayout({
             enableSystem
             // disableTransitionOnChange
         >
-            <div className="flex flex-col min-h-screen">
-                <NavigationBar/>
-                <main className="flex-grow flex z-10">{children}</main>
-            </div>
+            <Providers>
+                <div className="flex flex-col min-h-screen">
+                    <NavigationBar/>
+                    <main className="flex-grow flex z-10">{children}</main>
+                </div>
+            </Providers>
         </ThemeProvider>
         </body>
         </html>

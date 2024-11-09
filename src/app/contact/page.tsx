@@ -3,7 +3,7 @@ const Contact = () => {
         <div className="flex justify-center items-center w-full text-center">
             <h1 className="text-7xl font-bold">
                 coming soon...{" "}
-                <span className="text-xl font-medium text-secondary">
+                <span className="text-xl font-thin">
 					(contact page)
 				</span>
             </h1>

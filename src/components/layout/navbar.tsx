@@ -54,7 +54,7 @@ export const NavigationBar = () => {
     ];
 
     return (
-        <nav className="z-10">
+        <nav className="z-40">
             <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
                 <div className="flex items-cente">
                     <Link href="/" className="text-xl font-bold">
