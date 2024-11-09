@@ -50,11 +50,21 @@ body {
     position: fixed;
 }
 
+/*#blur {*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    position: absolute;*/
+/*    z-index: 2;*/
+/*    backdrop-filter: blur(12vmax);*/
+/*}*/
+
 #blur {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Keeps it on top of the blob */
     backdrop-filter: blur(12vmax);
 }
 
