@@ -2,7 +2,7 @@ import { Linkedin, Github } from "lucide-react";
 
 export default function Home() {
     return (
-        <div className="flex flex-col justify-center items-center w-full h-screen space-y-6 p-4 ">
+        <div className="flex flex-col justify-center items-center w-full space-y-6 p-4 ">
             <h1
                 className="text-5xl sm:text-7xl font-bold intro__text select-none"
                 style={{ opacity: 1, transform: "none" }}

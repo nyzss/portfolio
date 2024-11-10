@@ -9,16 +9,32 @@ export const MouseFollow = () => {
     const circle: MutableRefObject<HTMLDivElement | null> = useRef(null);
     const dot: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
-    // useGSAP(() => {
-    // }, {scope: blob})
     useEffect(() => {
+        const resetPosition = () => {
+            gsap.to(circle.current, {
+                x: -100,
+                y: -100,
+            });
+            gsap.to(dot.current, {
+                x: -100,
+                y: -100,
+            });
+            // gsap.to(blob.current, {
+            //     x: 0,
+            //     y: 0,
+            // });
+        };
         const handleMovement = (event: PointerEvent) => {
+            if (event.pointerType === "touch") {
+                resetPosition();
+                return;
+            }
             const { clientX, clientY } = event;
 
             gsap.to(blob.current, {
-                left: clientX,
-                top: clientY,
-                duration: 3,
+                left: clientX - blob.current?.clientWidth! / 2,
+                top: clientY - blob.current?.clientHeight! / 2,
+                duration: 2,
                 delay: 0,
                 fill: "forwards",
                 ease: "power3.out",
@@ -49,6 +65,8 @@ export const MouseFollow = () => {
             });
         };
         window.addEventListener("pointermove", handleMovement);
+
+        resetPosition();
         return () => {
             window.removeEventListener("pointermove", handleMovement);
         };
@@ -62,12 +80,12 @@ export const MouseFollow = () => {
             ></div>
             <div
                 ref={dot}
-                className="w-2 h-2 bg-gray-700 dark:bg-gray-400 rounded-full fixed top-0 left-0 pointer-events-none z-50"
+                className="w-2 h-2 bg-gray-700 dark:bg-gray-400 rounded-full fixed top-0 left-0 pointer-events-none z-50 inline-block"
             ></div>
             <div
                 ref={blob}
                 id="blob"
-                className="bg-gradient-to-br dark:from-indigo-500 dark:to-teal-300 from-indigo-700 to-teal-600"
+                className="bg-gradient-to-br dark:from-indigo-600 dark:to-teal-300 from-indigo-700 to-teal-600"
             ></div>
 
             <div id="blur"></div>
