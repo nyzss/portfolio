@@ -4,7 +4,7 @@ export default function Home() {
     return (
         <div className="flex flex-col justify-center items-center w-full space-y-6 p-4">
             <h1 className="text-5xl sm:text-7xl font-bold intro__text select-none  drop-shadow-xl">
-                Hey ! I'm{" "}
+                {"Hey ! I'm "}
                 <span className="bg-gradient-to-l from-indigo-600 to-teal-500 text-transparent bg-clip-text">
                     Okan Koca
                 </span>
@@ -21,7 +21,7 @@ export default function Home() {
                 .
             </p>
             <p className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed select-none">
-                When I'm not coding, you can find me writing my{" "}
+                {"When I'm not coding, you can find me writing my "}
                 <a
                     href="/blog"
                     className="text-teal-600 dark:text-teal-400 hover:underline"

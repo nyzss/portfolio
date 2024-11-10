@@ -25,15 +25,20 @@ export const MouseFollow = () => {
             // });
         };
         const handleMovement = (event: PointerEvent) => {
-            if (event.pointerType === "touch") {
+            if (
+                event.pointerType === "touch" ||
+                !blob.current ||
+                !circle.current ||
+                !dot.current
+            ) {
                 resetPosition();
                 return;
             }
             const { clientX, clientY } = event;
 
             gsap.to(blob.current, {
-                left: clientX - blob.current?.clientWidth! / 2,
-                top: clientY - blob.current?.clientHeight! / 2,
+                left: clientX - blob.current.clientWidth / 2,
+                top: clientY - blob.current.clientHeight / 2,
                 duration: 2,
                 delay: 0,
                 fill: "forwards",
@@ -48,8 +53,8 @@ export const MouseFollow = () => {
                     y: rect?.top,
                 },
                 {
-                    x: clientX - circle.current?.clientWidth! / 2,
-                    y: clientY - circle.current?.clientHeight! / 2,
+                    x: clientX - circle.current.clientWidth / 2,
+                    y: clientY - circle.current.clientHeight / 2,
                     duration: 0.6,
                     delay: 0,
                     ease: "power3.out",
@@ -57,8 +62,8 @@ export const MouseFollow = () => {
                 }
             );
             gsap.to(dot.current, {
-                x: clientX - dot.current?.clientWidth!,
-                y: clientY - dot.current?.clientHeight!,
+                x: clientX - dot.current.clientWidth,
+                y: clientY - dot.current.clientHeight,
                 duration: 0.3,
                 delay: 0,
                 ease: "power3.out",
