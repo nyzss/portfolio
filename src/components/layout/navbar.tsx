@@ -17,6 +17,7 @@ import {
 } from "../ui/navigation-menu";
 import { Button } from "../ui/button";
 import { useTheme } from "next-themes";
+import { routes } from "./routes";
 
 export const NavigationBar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -37,21 +38,6 @@ export const NavigationBar = () => {
             </div>
         );
     };
-
-    const routes = [
-        {
-            href: "/",
-            name: "Home",
-        },
-        {
-            href: "/projects",
-            name: "Projects",
-        },
-        {
-            href: "/contact",
-            name: "Contact",
-        },
-    ];
 
     return (
         <nav className="z-40">

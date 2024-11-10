@@ -1,4 +1,5 @@
 import { Linkedin, Github } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -10,23 +11,30 @@ export default function Home() {
                 </span>
             </h1>
             <p className="w-full max-w-6xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed text-left">
-                {`I'm a full-stack developer studying at Ecole 42 in Paris, with a passion for backend systems and infrastructure. I love tackling ambitious projects and solving complex problems, especially those I've never encountered before. Fast-moving environments energize me, and I'm always eager to learn and grow.`}
+                I{"'"}m a full-stack developer studying at
+                <a
+                    href="https://en.wikipedia.org/wiki/42_(school)"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"
+                >
+                    {" Ecole 42 "}
+                </a>
+                in Paris, with a passion for backend systems and infrastructure.
+                I love tackling ambitious projects and solving complex problems,
+                especially those I{"'"}ve never encountered before. Fast-moving
+                environments energize me, and I{"'"}m always eager to learn and
+                grow.
             </p>
             <p className="w-full max-w-4xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed text-left">
                 You can check out my{" "}
-                <a
+                <Link
                     href="/projects"
                     className="text-teal-600 dark:text-teal-400 hover:underline font-medium"
                 >
                     PROJECTS
-                </a>
-                {" or "}
-                <a
-                    href="/contact"
-                    className="text-teal-600 dark:text-teal-400 hover:underline font-medium"
-                >
-                    CONTACT ME.
-                </a>
+                </Link>
+                {"."}
             </p>
             <div className="flex justify-start space-x-6 mt-4">
                 <a
