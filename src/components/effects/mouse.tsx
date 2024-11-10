@@ -85,7 +85,7 @@ export const MouseFollow = () => {
             <div
                 ref={blob}
                 id="blob"
-                className="bg-gradient-to-br dark:from-indigo-600 dark:to-teal-300 from-indigo-700 to-teal-600"
+                className="bg-gradient-to-br dark:from-indigo-600 dark:to-teal-300 from-purple-500 to-teal-500"
             ></div>
 
             <div id="blur"></div>

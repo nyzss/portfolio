@@ -2,17 +2,12 @@ import { Linkedin, Github } from "lucide-react";
 
 export default function Home() {
     return (
-        <div className="flex flex-col justify-center items-center w-full space-y-6 p-4 ">
-            <h1
-                className="text-5xl sm:text-7xl font-bold intro__text select-none"
-                style={{ opacity: 1, transform: "none" }}
-            >
-                <mark
-                    className="mark bg-gradient-to-l from-indigo-600 to-teal-500
-                 text-white px-2 py-1 rounded-md"
-                >
-                    Hey ! I'm Okan Koca
-                </mark>
+        <div className="flex flex-col justify-center items-center w-full space-y-6 p-4">
+            <h1 className="text-5xl sm:text-7xl font-bold intro__text select-none  drop-shadow-xl">
+                Hey ! I'm{" "}
+                <span className="bg-gradient-to-l from-indigo-600 to-teal-500 text-transparent bg-clip-text">
+                    Okan Koca
+                </span>
             </h1>
             <p className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed select-none">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
