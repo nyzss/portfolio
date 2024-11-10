@@ -7,6 +7,7 @@ export const MouseFollow = () => {
     gsap.registerPlugin(useGSAP);
     const blob: MutableRefObject<HTMLDivElement | null> = useRef(null);
     const circle: MutableRefObject<HTMLDivElement | null> = useRef(null);
+    const dot: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
     // useGSAP(() => {
     // }, {scope: blob})
@@ -23,9 +24,16 @@ export const MouseFollow = () => {
             });
 
             gsap.to(circle.current, {
-                x: clientX - 40,
+                x: clientX - 6 * 8,
                 y: clientY - 6 * 8,
                 duration: 1,
+                delay: 0,
+                ease: "power3.out",
+            });
+            gsap.to(dot.current, {
+                x: clientX - 8,
+                y: clientY - 8,
+                duration: 0.3,
                 delay: 0,
                 ease: "power3.out",
             });
@@ -41,6 +49,10 @@ export const MouseFollow = () => {
             <div
                 ref={circle}
                 className="inline-block w-24 h-24 rounded-full border-solid border border-opacity-40 border-gray-700 dark:border-gray-400 bg-opacity-0 absolute top-0 left-0 pointer-events-none z-50"
+            ></div>
+            <div
+                ref={dot}
+                className="w-2 h-2 bg-gray-700 dark:bg-gray-400 rounded-full absolute top-0 left-0 pointer-events-none z-50"
             ></div>
             <div ref={blob} id="blob"></div>
             <div id="blur"></div>
