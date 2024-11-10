@@ -40,7 +40,7 @@ export const NavigationBar = () => {
     };
 
     return (
-        <nav className="z-40">
+        <nav className="z-40 sticky top-0">
             <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
                 <div className="flex items-cente">
                     <Link href="/" className="text-2xl font-bold">
