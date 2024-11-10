@@ -2,40 +2,31 @@ import { Linkedin, Github } from "lucide-react";
 
 export default function Home() {
     return (
-        <div className="flex flex-col justify-center items-center w-full space-y-6 p-4">
-            <h1 className="text-5xl sm:text-7xl font-bold intro__text select-none  drop-shadow-xl">
-                {"Hey ! I'm "}
-                <span className="bg-gradient-to-l from-indigo-600 to-teal-500 text-transparent bg-clip-text">
+        <div className="flex flex-col justify-center items-center w-full space-y-6 p-4 select-none">
+            <h1 className="text-5xl sm:text-7xl font-bold intro__text  drop-shadow-xl">
+                {"Hey! I'm "}
+                <span className="bg-gradient-to-l dark:from-indigo-400 dark:to-teal-400 from-indigo-500 to-cyan-500 text-transparent bg-clip-text">
                     Okan Koca
                 </span>
             </h1>
-            <p className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed select-none">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Voluptas animi odio, numquam excepturi iste laborum saepe.{" "}
+            <p className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                {`I'm a full-stack developer studying at Ecole 42 in Paris. Passionate about crafting simple and elegant web experiences. I enjoy solving problems, working in teams, and always learning something new.`}
+            </p>
+            <p className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed ">
+                You can check out my{" "}
                 <a
                     href="/projects"
                     className="text-teal-600 dark:text-teal-400 hover:underline"
                 >
-                    Check out my projects
+                    projects
                 </a>
-                .
-            </p>
-            <p className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed select-none">
-                {"When I'm not coding, you can find me writing my "}
-                <a
-                    href="/blog"
-                    className="text-teal-600 dark:text-teal-400 hover:underline"
-                >
-                    blog
-                </a>{" "}
-                Feel free to{" "}
+                {" or "}
                 <a
                     href="/contact"
                     className="text-teal-600 dark:text-teal-400 hover:underline"
                 >
-                    contact me
+                    contact me.
                 </a>
-                .
             </p>
             <div className="flex justify-center space-x-6 mt-4">
                 <a
