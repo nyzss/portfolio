@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {useState} from "react";
+import { useState } from "react";
 import {
     Bars3Icon,
     MoonIcon,
@@ -15,13 +15,13 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
 } from "../ui/navigation-menu";
-import {Button} from "../ui/button";
-import {useTheme} from "next-themes";
+import { Button } from "../ui/button";
+import { useTheme } from "next-themes";
 
 export const NavigationBar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
 
-    const {resolvedTheme, setTheme} = useTheme();
+    const { resolvedTheme, setTheme } = useTheme();
 
     const toggleTheme = () => {
         console.log(resolvedTheme);
@@ -32,7 +32,7 @@ export const NavigationBar = () => {
         return (
             <div>
                 <Button onClick={toggleTheme} variant={"outline"}>
-                    {resolvedTheme === "light" ? <SunIcon/> : <MoonIcon/>}
+                    {resolvedTheme === "light" ? <SunIcon /> : <MoonIcon />}
                 </Button>
             </div>
         );
@@ -57,7 +57,7 @@ export const NavigationBar = () => {
         <nav className="z-40">
             <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
                 <div className="flex items-cente">
-                    <Link href="/" className="text-xl font-bold">
+                    <Link href="/" className="text-2xl font-bold">
                         Okan Koca
                     </Link>
                 </div>
@@ -65,7 +65,7 @@ export const NavigationBar = () => {
                     <NavigationMenu>
                         <NavigationMenuList className="space-x-5">
                             <NavigationMenuItem>
-                                <Toggle/>
+                                <Toggle />
                             </NavigationMenuItem>
                             {routes.map((link) => (
                                 <NavigationMenuItem key={link.href}>
@@ -84,15 +84,15 @@ export const NavigationBar = () => {
                 </div>
                 {/* menu toggle here */}
                 <div className="md:hidden flex space-x-3">
-                    <Toggle/>
+                    <Toggle />
                     <Button
                         variant="ghost"
                         onClick={() => setNavbarOpen(!navbarOpen)}
                     >
                         {navbarOpen ? (
-                            <XMarkIcon className="h-6 w-6"/>
+                            <XMarkIcon className="h-6 w-6" />
                         ) : (
-                            <Bars3Icon className="h-6 w-6"/>
+                            <Bars3Icon className="h-6 w-6" />
                         )}
                     </Button>
                 </div>

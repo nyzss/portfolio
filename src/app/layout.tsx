@@ -1,10 +1,10 @@
-import type {Metadata} from "next";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import {NavigationBar} from "@/components/layout/navbar";
-import {ThemeProvider} from "@/components/theme-provider";
+import { NavigationBar } from "@/components/layout/navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 import MouseFollow from "@/components/effects/mouse";
-import {Providers} from "@/components/effects/transition";
+import { Providers } from "@/components/effects/transition";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -23,30 +23,32 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+    children,
+}: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-        <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-        <MouseFollow/>
-        <ThemeProvider
-            attribute={"class"}
-            defaultTheme={"system"}
-            enableSystem
-            // disableTransitionOnChange
-        >
-            <Providers>
-                <div className="flex flex-col min-h-screen">
-                    <NavigationBar/>
-                    <main className="flex-grow flex z-10">{children}</main>
-                </div>
-            </Providers>
-        </ThemeProvider>
-        </body>
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            >
+                <MouseFollow />
+                <ThemeProvider
+                    attribute={"class"}
+                    defaultTheme={"system"}
+                    enableSystem
+                    // disableTransitionOnChange
+                >
+                    <Providers>
+                        <div className="flex flex-col min-h-screen">
+                            <NavigationBar />
+                            <main className="flex-grow flex z-10">
+                                {children}
+                            </main>
+                        </div>
+                    </Providers>
+                </ThemeProvider>
+            </body>
         </html>
     );
 }
