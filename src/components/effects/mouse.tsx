@@ -14,25 +14,35 @@ export const MouseFollow = () => {
     useEffect(() => {
         const handleMovement = (event: PointerEvent) => {
             const { clientX, clientY } = event;
+
             gsap.to(blob.current, {
                 left: clientX,
                 top: clientY,
-                duration: 4,
+                duration: 3,
                 delay: 0,
                 fill: "forwards",
                 ease: "power3.out",
-            });
+            }).timeScale(0.5);
 
-            gsap.to(circle.current, {
-                x: clientX - 6 * 8,
-                y: clientY - 6 * 8,
-                duration: 1,
-                delay: 0,
-                ease: "power3.out",
-            });
+            const rect = circle.current?.getBoundingClientRect();
+            gsap.fromTo(
+                circle.current,
+                {
+                    x: rect?.left,
+                    y: rect?.top,
+                },
+                {
+                    x: clientX - circle.current?.clientWidth! / 2,
+                    y: clientY - circle.current?.clientHeight! / 2,
+                    duration: 0.6,
+                    delay: 0,
+                    ease: "power3.out",
+                    fill: "forwards",
+                }
+            );
             gsap.to(dot.current, {
-                x: clientX - 8,
-                y: clientY - 8,
+                x: clientX - dot.current?.clientWidth!,
+                y: clientY - dot.current?.clientHeight!,
                 duration: 0.3,
                 delay: 0,
                 ease: "power3.out",
@@ -48,13 +58,18 @@ export const MouseFollow = () => {
         <>
             <div
                 ref={circle}
-                className="inline-block w-24 h-24 rounded-full border-solid border border-opacity-40 border-gray-700 dark:border-gray-400 bg-opacity-0 absolute top-0 left-0 pointer-events-none z-50"
+                className="inline-block w-24 h-24 rounded-full border-solid border border-opacity-40 border-gray-700 dark:border-gray-400 bg-opacity-0 top-0 left-0 pointer-events-none z-50 fixed"
             ></div>
             <div
                 ref={dot}
-                className="w-2 h-2 bg-gray-700 dark:bg-gray-400 rounded-full absolute top-0 left-0 pointer-events-none z-50"
+                className="w-2 h-2 bg-gray-700 dark:bg-gray-400 rounded-full fixed top-0 left-0 pointer-events-none z-50"
             ></div>
-            <div ref={blob} id="blob"></div>
+            <div
+                ref={blob}
+                id="blob"
+                className="bg-gradient-to-br dark:from-indigo-500 dark:to-teal-300 from-indigo-700 to-teal-600"
+            ></div>
+
             <div id="blur"></div>
         </>
     );
