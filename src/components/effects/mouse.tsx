@@ -79,6 +79,8 @@ export const MouseFollow = () => {
 
     return (
         <>
+            <div className="absolute inset-0 z-10 h-full w-full bg-[radial-gradient(#b1b3b6_1px,transparent_1px)] dark:bg-[radial-gradient(#22272d_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
             <div
                 ref={circle}
                 className="inline-block w-24 h-24 rounded-full border-solid border border-opacity-40 border-gray-700 dark:border-gray-400 bg-opacity-0 top-0 left-0 pointer-events-none z-50 fixed"
