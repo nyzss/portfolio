@@ -17,6 +17,7 @@ import {
 } from "../ui/navigation-menu";
 import { Button } from "../ui/button";
 import { useTheme } from "next-themes";
+import { routes } from "./routes";
 
 export const NavigationBar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -38,23 +39,8 @@ export const NavigationBar = () => {
         );
     };
 
-    const routes = [
-        {
-            href: "/",
-            name: "Home",
-        },
-        {
-            href: "/projects",
-            name: "Projects",
-        },
-        {
-            href: "/contact",
-            name: "Contact",
-        },
-    ];
-
     return (
-        <nav className="z-40">
+        <nav className="z-40 sticky top-0">
             <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
                 <div className="flex items-cente">
                     <Link href="/" className="text-2xl font-bold">
