@@ -1,10 +1,11 @@
+import { ProjectCard } from "@/components/main/project-card";
 import { ProfileLinks } from "@/components/projects/profile-links";
 import Link from "next/link";
 
 export default function Home() {
     return (
-        <div>
-            <section className="flex flex-col justify-center items-start w-full min-h-screen max-w-screen-xl mx-auto space-y-4 p-4 select-none font-normal">
+        <>
+            <section className="flex flex-col justify-center w-full min-h-screen max-w-screen-xl mx-auto space-y-4 p-4 select-none font-normal">
                 <h1 className="text-5xl sm:text-7xl font-bold drop-shadow-xl text-left">
                     {"Hey! I'm "}
                     <span className="bg-gradient-to-l dark:from-indigo-400 dark:to-teal-400 from-indigo-500 to-cyan-500 text-transparent bg-clip-text">
@@ -41,6 +42,10 @@ export default function Home() {
                     {"."}
                 </p>
                 <ProfileLinks />
+                <div className="">
+                    <h1>current Technologies</h1>
+                    <ProjectCard />
+                </div>
             </section>
 
             <section className="flex items-center justify-center w-full min-h-screen p-4">
@@ -57,6 +62,6 @@ export default function Home() {
                     </p>
                 </div>
             </section>
-        </div>
+        </>
     );
 }
