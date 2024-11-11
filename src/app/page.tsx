@@ -1,10 +1,10 @@
-import { ProjectCard } from "@/components/main/project-card";
+import { Technologies } from "@/components/main/technologies";
 import { ProfileLinks } from "@/components/projects/profile-links";
 import Link from "next/link";
 
 export default function Home() {
     return (
-        <>
+        <div>
             <section className="flex flex-col justify-center w-full min-h-screen max-w-screen-xl mx-auto space-y-4 p-4 select-none font-normal">
                 <h1 className="text-5xl sm:text-7xl font-bold drop-shadow-xl text-left">
                     {"Hey! I'm "}
@@ -42,13 +42,15 @@ export default function Home() {
                     {"."}
                 </p>
                 <ProfileLinks />
-                <div className="">
-                    <h1>current Technologies</h1>
-                    <ProjectCard />
-                </div>
             </section>
 
-            <section className="flex items-center justify-center w-full min-h-screen p-4">
+            <div className="flex items-center justify-center w-full">
+                <div className="w-4/5 h-4/5">
+                    <Technologies />
+                </div>
+            </div>
+
+            <section className="flex items-center justify-center w-full mt-52 p-4">
                 <div className="max-w-4xl text-center">
                     <h2 className="text-4xl font-bold mb-4">
                         More Information Section
@@ -62,6 +64,6 @@ export default function Home() {
                     </p>
                 </div>
             </section>
-        </>
+        </div>
     );
 }
