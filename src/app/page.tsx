@@ -44,8 +44,15 @@ export default function Home() {
                 <ProfileLinks />
             </section>
 
-            <div className="flex items-center justify-center w-full">
+            <div className="flex items-center justify-center w-full select-none">
                 <div className="w-4/5 h-4/5">
+                    <h1 className="text-4xl font-bold mb-3">
+                        Current technologies
+                    </h1>
+                    <p className="mb-5 text-primary text-opacity-70">
+                        I{"'"}m experienced with tools and frameworks that help
+                        me create reliable and effective applications.
+                    </p>
                     <Technologies />
                 </div>
             </div>

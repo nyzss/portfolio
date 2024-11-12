@@ -39,6 +39,7 @@ export const NavigationBar = () => {
         );
     };
 
+    // TODO: add a shadow/blur to the navbar when its sticky.
     return (
         <nav className="z-40 sticky top-0">
             <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
