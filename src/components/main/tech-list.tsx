@@ -42,4 +42,34 @@ export const techs: Tech[] = [
         hue: "bg-[#F1502F]/20",
         description: "Version control",
     },
+    {
+        name: "PostgreSQL",
+        icon: "/svg/postgresql.svg",
+        hue: "bg-[#336791]/20",
+        description: "Relational database",
+    },
+    {
+        name: "MongoDB",
+        icon: "/svg/mongodb.svg",
+        hue: "bg-[#13AA52]/20",
+        description: "NoSQL database",
+    },
+    {
+        name: "Docker",
+        icon: "/svg/docker.svg",
+        hue: "bg-[#2496ED]/20",
+        description: "Containerization",
+    },
+    {
+        name: "Python",
+        icon: "/svg/python.svg",
+        hue: "bg-[#3776ab]/20",
+    },
 ];
+
+// {
+//     name: "C/C++",
+//     icon: "/svg/c.svg",
+//     hue: "bg-[#F1502F]/20",
+//     description: "Version control",
+// },
