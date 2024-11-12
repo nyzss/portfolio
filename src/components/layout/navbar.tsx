@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
     Bars3Icon,
     MoonIcon,
@@ -22,6 +22,9 @@ import { routes } from "./routes";
 export const NavigationBar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
 
+    const [showBar, setShowBar] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
     const { resolvedTheme, setTheme } = useTheme();
 
     const toggleTheme = () => {
@@ -39,9 +42,29 @@ export const NavigationBar = () => {
         );
     };
 
-    // TODO: add a shadow/blur to the navbar when its sticky.
+    useEffect(() => {
+        const checkSticky = () => {
+            setShowBar(window.scrollY > scrollPosition);
+            setScrollPosition(window.scrollY);
+        };
+
+        window.addEventListener("scroll", checkSticky);
+
+        return () => {
+            window.removeEventListener("scroll", checkSticky);
+        };
+    }, [scrollPosition]);
+
     return (
-        <nav className="z-40 sticky top-0">
+        <nav
+            className={`z-40 sticky top-2 mx-4 rounded-sm transition-all duration-300 ${
+                showBar ? "-top-full" : ""
+            } ${
+                scrollPosition > 0
+                    ? "bg-secondary bg-opacity-20 backdrop-filter backdrop-blur-sm "
+                    : ""
+            }`}
+        >
             <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
                 <div className="flex items-cente">
                     <Link href="/" className="text-2xl font-bold">

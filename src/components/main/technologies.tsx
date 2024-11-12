@@ -8,7 +8,7 @@ export const Technologies = () => {
             {techs.map((tech) => (
                 <div
                     key={tech.name}
-                    className="flex flex-1 gap-5 p-2.5 rounded-xl border border-border bg-background hover:bg-secondary hover:border-ring dark:hover:border-dark-700 transition-colors duration-200"
+                    className="flex flex-1 gap-5 p-2.5 rounded-xl border border-border bg-background hover:bg-secondary hover:border-primary hover:border-opacity-30 transition-colors duration-200"
                 >
                     <div className={`p-3 rounded-lg w-fit ${tech.hue}`}>
                         <Image
