@@ -5,6 +5,7 @@ export interface Tech {
     description?: string;
 }
 
+// If there is a description then it is a main technology, if not it is an additional technology.
 export const techs: Tech[] = [
     {
         name: "TypeScript",
