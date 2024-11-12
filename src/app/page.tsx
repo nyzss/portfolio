@@ -59,13 +59,13 @@ export default function Home() {
 
             <section className="flex items-center justify-center w-full mt-52 p-4">
                 <div className="max-w-4xl text-center">
-                    <h2 className="text-4xl font-bold mb-4">
+                    {/* <h2 className="text-4xl font-bold mb-4">
                         More Information Section (Or contact me)
                     </h2>
                     <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                         Placeholder for now, will add more information about me
                         or a contact form, idk yet
-                    </p>
+                    </p> */}
                 </div>
             </section>
         </div>
