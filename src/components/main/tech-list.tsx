@@ -21,14 +21,14 @@ export const techs: Tech[] = [
     {
         name: "Next.js",
         icon: "/svg/nextjs.svg",
-        hue: "bg-dark-200/10 dark:bg-white/10",
+        hue: "bg-[#ffffff]/20",
         description: "React framework",
     },
     {
         name: "Tailwind",
         icon: "/svg/tailwind.svg",
         hue: "bg-[#0EA5E9]/20",
-        description: "CSS framework",
+        // description: "CSS framework",
     },
     {
         name: "Node.js",
@@ -52,7 +52,7 @@ export const techs: Tech[] = [
         name: "MongoDB",
         icon: "/svg/mongodb.svg",
         hue: "bg-[#13AA52]/20",
-        description: "NoSQL database",
+        // description: "NoSQL database",
     },
     {
         name: "Docker",
@@ -61,15 +61,29 @@ export const techs: Tech[] = [
         description: "Containerization",
     },
     {
+        name: "Rust",
+        icon: "/svg/rust.svg",
+        hue: "bg-[#ffcfa1]/40",
+        description: "Backend programming",
+    },
+    {
         name: "Python",
         icon: "/svg/python.svg",
         hue: "bg-[#3776ab]/20",
     },
+    {
+        name: "Django",
+        icon: "/svg/django.svg",
+        hue: "bg-[#2b956c]/20",
+    },
+    {
+        name: "C",
+        icon: "/svg/c.svg",
+        hue: "bg-[#A8B9CC]/20",
+    },
+    {
+        name: "C++",
+        icon: "/svg/cpp.svg",
+        hue: "bg-[#00599C]/20",
+    },
 ];
-
-// {
-//     name: "C/C++",
-//     icon: "/svg/c.svg",
-//     hue: "bg-[#F1502F]/20",
-//     description: "Version control",
-// },

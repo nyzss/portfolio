@@ -49,7 +49,7 @@ export default function Home() {
                     <h1 className="text-4xl font-bold mb-3">
                         Current technologies
                     </h1>
-                    <p className="mb-5 text-primary text-opacity-70">
+                    <p className="mb-5 text-primary text-opacity-80">
                         I{"'"}m experienced with tools and frameworks that help
                         me create reliable and effective applications.
                     </p>

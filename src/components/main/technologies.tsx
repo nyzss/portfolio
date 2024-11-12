@@ -5,7 +5,7 @@ import { techs } from "./tech-list";
 export const Technologies = () => {
     return (
         <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 items-center justify-between gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center justify-between gap-4 mb-8">
                 {techs
                     .filter((tech) => tech.description)
                     .map((tech) => (
@@ -48,7 +48,7 @@ export const Technologies = () => {
                     .map((tech) => (
                         <div
                             key={tech.name}
-                            className={`flex items-center gap-2 p-1.5 rounded-sm border border-border w-fit bg-background`}
+                            className={`flex items-center gap-2 p-1.5 rounded-sm border border-border w-fit bg-background hover:bg-secondary hover:bg-opacity-90 hover:border-primary hover:border-opacity-20 transition duration-200`}
                         >
                             <div className={`p-1.5 rounded-sm ${tech.hue}`}>
                                 <Image

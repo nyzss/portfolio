@@ -58,7 +58,7 @@ export const NavigationBar = () => {
     return (
         <nav
             className={`z-40 sticky top-2 mx-4 rounded-sm transition-all duration-300 ${
-                showBar ? "-top-full" : ""
+                showBar ? "-top-3/4" : ""
             } ${
                 scrollPosition > 0
                     ? "bg-secondary bg-opacity-20 backdrop-filter backdrop-blur-sm "
