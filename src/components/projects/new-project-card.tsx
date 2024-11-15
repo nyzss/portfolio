@@ -11,23 +11,28 @@ export interface ProjectCardProps {
 }
 
 export const ProjectCard = ({
-    title = "Project Alpha",
-    description = "Project Alpha is an innovative solution that redefines user engagement and experience...",
-    imageUrl = "/projects/placeholder.png",
+    title = "Transcendence",
+    description = `Final project of 42's common core, creating a multiplayer
+Pong platform. Built with vanilla JavaScript for the
+frontend, Django and REST framework for the backend,
+and containerized with Docker for consistent
+deployment.`,
+    imageUrl = "/projects/transcendence/3.png",
     link = "/showcase/project-alpha",
     technologies = [
-        "Figma",
-        "WordPress",
-        "PHP",
         "JavaScript",
-        "Tailwind",
+        "Bootstrap",
+        "Django",
+        "Python",
+        "Chart.js",
         "Git",
+        "Nginx",
     ],
 }: ProjectCardProps) => {
     return (
         <div className="group">
             <a href={link} className="block">
-                <div className="flex flex-col">
+                <div className="flex flex-col text-left">
                     <div className="relative mb-4 flex items-stretch p-2 rounded-xl group-hover:bg-zinc-800 group-hover:border-neutral-600 transition duration-200 ease-in-out">
                         <Image
                             alt={title}
@@ -39,11 +44,11 @@ export const ProjectCard = ({
                             src={imageUrl}
                             style={{ color: "transparent" }}
                         />
-                        <div className="absolute inset-0 flex flex-col items-start justify-end px-5 pb-7 tracking-tighter bg-black/80 group-hover:bg-black/90 rounded-xl transition duration-200 ease-in-out">
-                            <h2 className="text-white text-xl sm:text-2xl font-semibold">
+                        <div className="absolute inset-0 flex flex-col items-start justify-end px-5 pb-7 tracking-tighter bg-black/25 group-hover:bg-black/0 rounded-xl transition duration-200 ease-in-out ">
+                            <h2 className="text-white group-hover:text-black text-xl sm:text-2xl font-semibold">
                                 {title}
                             </h2>
-                            <p className="text-sm md:text-base font-medium text-neutral-300 tabular-nums leading-normal">
+                            <p className="text-sm md:text-base font-medium text-white tabular-nums leading-normal group-hover:text-black">
                                 {description}
                             </p>
                         </div>
