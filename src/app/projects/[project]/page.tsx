@@ -10,6 +10,8 @@ import {
 import { readdir } from "fs/promises";
 import path from "path";
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 // import { Card, CardContent } from "@/components/ui/card";
 
 export const ProjectView = async ({
@@ -41,39 +43,51 @@ export const ProjectView = async ({
         "projects/transcendence"
     );
     const files = await readdir(testPath);
-    console.log(files);
+    // console.log(files);
 
     return (
-        <div className="container mx-auto sm:py-44 flex h-screen flex-col items-center">
-            <Link
-                href="/projects"
-                className="self-start text-xl text-teal-400 hover:text-teal-500 hover:underline"
-            >
-                Go back to projects
-            </Link>
-            <h1 className="self-start my-4 text-5xl font-bold">
-                {project.charAt(0).toUpperCase() + project.slice(1)}
-            </h1>
-            <div>
-                <Carousel className="">
+        <div className="container mx-auto sm:py-12 flex h-screen flex-col items-center">
+            <div className="w-full mx-auto max-w-7xl">
+                <Link
+                    href="/projects"
+                    className="self-start text-xl text-teal-400 hover:text-teal-500 hover:underline"
+                >
+                    Go back to projects
+                </Link>
+                <h1 className="self-start my-4 text-5xl font-bold">
+                    {project.charAt(0).toUpperCase() + project.slice(1)}
+                </h1>
+                <Carousel>
                     <CarouselContent>
                         {files.map((value, index) => (
                             <CarouselItem key={index}>
-                                <div className="flex items-center justify-center">
+                                {/* <Card> */}
+                                <div className="flex justify-center aspect-video items-center">
                                     <Image
                                         width={1280}
                                         height={720}
                                         src={`/projects/transcendence/${value}`}
                                         alt="project image"
-                                        className="aspect-video"
+                                        className="object-cover rounded-sm"
                                     />
                                 </div>
+                                {/* </Card> */}
                             </CarouselItem>
                         ))}
                     </CarouselContent>
                     <CarouselPrevious />
                     <CarouselNext />
                 </Carousel>
+                <p className="text-2xl text-primary text-opacity-75 mt-6">
+                    {currentProject.description}
+                </p>
+                <div className="flex space-x-4 select-none my-3 flex-wrap space-y-2">
+                    {currentProject.technologies.map((tech) => (
+                        <Badge key={tech} className="text-md">
+                            {tech}
+                        </Badge>
+                    ))}
+                </div>
             </div>
         </div>
     );

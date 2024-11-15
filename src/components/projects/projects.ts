@@ -18,7 +18,7 @@ export const projects: ProjectCardProps[] = [
         title: "Transcendence",
         description:
             "Final project of 42's common core, creating a multiplayer Pong platform. Built with vanilla JavaScript for the frontend, Django and REST framework for the backend, and containerized with Docker for consistent deployment.",
-        imageUrl: "/projects/transcendence/3.png",
+        imageUrl: "/projects/transcendence/1.png",
         link: "/projects/transcendence",
         technologies: [
             "JavaScript",
