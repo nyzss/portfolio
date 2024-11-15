@@ -10,8 +10,9 @@ import {
 import { readdir } from "fs/promises";
 import path from "path";
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
+// import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 // import { Card, CardContent } from "@/components/ui/card";
 
 export const ProjectView = async ({
@@ -46,45 +47,53 @@ export const ProjectView = async ({
     // console.log(files);
 
     return (
-        <div className="container mx-auto sm:py-12 flex h-screen flex-col items-center">
-            <div className="w-full mx-auto max-w-7xl">
+        <div className="container mx-auto px-4 py-8">
+            <div className="w-full mx-auto max-w-5xl">
                 <Link
                     href="/projects"
                     className="self-start text-xl text-teal-400 hover:text-teal-500 hover:underline"
                 >
                     Go back to projects
                 </Link>
-                <h1 className="self-start my-4 text-5xl font-bold">
-                    {project.charAt(0).toUpperCase() + project.slice(1)}
+                <h1 className="text-3xl font-bold mb-6">
+                    {currentProject.title}
                 </h1>
-                <Carousel>
-                    <CarouselContent>
-                        {files.map((value, index) => (
-                            <CarouselItem key={index}>
-                                {/* <Card> */}
-                                <div className="flex justify-center aspect-video items-center">
+            </div>
+
+            <Carousel
+                className="w-full max-w-5xl mx-auto mb-8"
+                opts={{
+                    loop: true,
+                }}
+            >
+                <CarouselContent>
+                    {files.map((value, index) => (
+                        <CarouselItem key={index}>
+                            <Card>
+                                <CardContent className="flex aspect-video items-center justify-center p-1">
                                     <Image
-                                        width={1280}
-                                        height={720}
                                         src={`/projects/transcendence/${value}`}
-                                        alt="project image"
-                                        className="object-cover rounded-sm"
+                                        alt={`Project image ${index + 1}`}
+                                        width={1920}
+                                        height={1080}
+                                        className="rounded-lg object-cover"
                                     />
-                                </div>
-                                {/* </Card> */}
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-                </Carousel>
-                <p className="text-2xl text-primary text-opacity-75 mt-6">
-                    {currentProject.description}
-                </p>
-                <div className="flex space-x-4 select-none my-3 flex-wrap space-y-2">
-                    {currentProject.technologies.map((tech) => (
-                        <Badge key={tech} className="text-md">
-                            {tech}
+                                </CardContent>
+                            </Card>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden sm:block" />
+                <CarouselNext className="hidden sm:block" />
+            </Carousel>
+
+            <div className="max-w-5xl mx-auto">
+                <p className="text-lg mb-6">{currentProject.description}</p>
+
+                <div className="flex flex-wrap gap-2">
+                    {currentProject.technologies.map((tag, index) => (
+                        <Badge key={index} variant="secondary">
+                            {tag}
                         </Badge>
                     ))}
                 </div>
