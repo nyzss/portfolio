@@ -10,16 +10,14 @@ import {
 import { readdir } from "fs/promises";
 import path from "path";
 import Image from "next/image";
-// import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-// import { Card, CardContent } from "@/components/ui/card";
 
-export const ProjectView = async ({
+export default async function ProjectView({
     params,
 }: {
     params: Promise<{ project: string }>;
-}) => {
+}) {
     const project = (await params).project;
 
     const currentProject = projects.find(
@@ -100,6 +98,4 @@ export const ProjectView = async ({
             </div>
         </div>
     );
-};
-
-export default ProjectView;
+}
