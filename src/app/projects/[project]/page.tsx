@@ -42,11 +42,9 @@ export default async function ProjectView({
         "projects/transcendence"
     );
     const files = await readdir(testPath);
-    // console.log(files);
-
     return (
-        <div className="container mx-auto px-4 py-8">
-            <div className="w-full mx-auto max-w-5xl">
+        <div className="container mx-auto px-4">
+            <div className="w-full mx-auto max-w-5xl mt-4">
                 <Link
                     href="/projects"
                     className="self-start text-xl text-teal-400 hover:text-teal-500 hover:underline"
@@ -81,8 +79,8 @@ export default async function ProjectView({
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="hidden sm:block" />
-                <CarouselNext className="hidden sm:block" />
+                <CarouselPrevious className="hidden sm:flex" />
+                <CarouselNext className="hidden sm:flex" />
             </Carousel>
 
             <div className="max-w-5xl mx-auto">

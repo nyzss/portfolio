@@ -1,62 +1,48 @@
-import Image from "next/image";
-import { Github } from "lucide-react"; // Assuming you have a Github component
-import { SquareArrowOutUpRight } from "lucide-react"; // Assuming you have a link icon component
-import { TechTag } from "./tech-tag";
-export const ProjectCard = () => {
+// import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { ProjectCardProps } from "./projects";
+
+export const ProjectCard = ({
+    project: { title, imageUrl, link, technologies },
+}: {
+    project: ProjectCardProps;
+}) => {
     return (
-        <li className="relative pl-8 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-600">
-            <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3 mb-4 md:mb-0 md:mr-6">
-                    <Image
-                        alt="Random Project Title"
-                        loading="lazy"
-                        width="300"
-                        height="200"
-                        decoding="async"
-                        className="rounded-lg object-cover shadow-lg hover:shadow-xl transition-shadow duration-300"
-                        src="/projects/placeholder.png"
-                    />
-                </div>
-                <div className="md:w-2/3 text-left">
-                    <h3 className="text-2xl font-semibold mb-3 text-gray-100">
-                        transcendence
-                    </h3>
-                    <ul className="space-y-2 text-gray-300 mb-4">
-                        <li className="flex items-start">
-                            <span className="mr-2 mt-1.5 text-gray-500">•</span>
-                            <span>
-                                built app with vanilla javascript, django with
-                                python.
-                            </span>
-                        </li>
-                    </ul>
-                    <div className="flex flex-wrap select-none">
-                        <TechTag>Next.js</TechTag>
-                        <TechTag>Tailwind CSS</TechTag>
-                        <TechTag>API Integration</TechTag>
+        <div className="group">
+            <Link href={link} className="block">
+                <div className="flex flex-col text-left">
+                    <div className="relative mb-4 flex items-stretch p-2 rounded-xl group-hover:bg-zinc-800 group-hover:border-neutral-600 transition duration-200 ease-in-out">
+                        <img
+                            alt={title}
+                            loading="lazy"
+                            width="500"
+                            height="200"
+                            decoding="async"
+                            className="object-cover rounded-lg aspect-video grow"
+                            src={imageUrl}
+                            style={{ color: "transparent" }}
+                        />
+                        <div className="absolute inset-0 flex flex-col items-start justify-end px-5 pb-7 tracking-tighter bg-black/45 group-hover:bg-black/0 rounded-xl transition duration-200 ease-in-out ">
+                            <h2 className="text-white group-hover:text-black text-xl sm:text-2xl font-semibold">
+                                {title}
+                            </h2>
+                        </div>
                     </div>
-                    <div className="flex space-x-4 mt-4">
-                        <a
-                            href="https://github.com/nyzss/transcendence"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center text-primary hover:text-white transition-colors duration-300"
-                        >
-                            <Github className="mr-2" />
-                            <span>View Code</span>
-                        </a>
-                        <a
-                            href="https://okankoca.dev"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center text-primary hover:text-primary-foreground transition-colors duration-300"
-                        >
-                            <SquareArrowOutUpRight className="mr-2" />
-                            <span>Live Demo</span>
-                        </a>
+                    <div className="ml-2 text-primary text-opacity-70 tabular-nums leading-normal">
+                        <ul className="flex flex-wrap gap-2">
+                            {technologies.map((tech, index) => (
+                                <li
+                                    key={index}
+                                    className="after:content-[','] last:after:content-[''] text-xs md:text-sm"
+                                >
+                                    {tech}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </li>
+            </Link>
+        </div>
     );
 };
