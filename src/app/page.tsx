@@ -58,10 +58,8 @@ export default function Home() {
                 </div>
             </div>
 
-            <section className="flex items-center justify-center w-full my-40 p-4">
-                <div className="max-w-7xl text-center">
-                    <ProjectList />
-                </div>
+            <section className="w-full my-40 p-4">
+                <ProjectList />
             </section>
         </div>
     );
