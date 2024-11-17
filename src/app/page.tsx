@@ -1,4 +1,4 @@
-// import { ProjectList } from "@/components/main/project-list";
+import { ProjectList } from "@/components/projects/project-list";
 import { Technologies } from "@/components/main/technologies";
 import { ProfileLinks } from "@/components/projects/profile-links";
 import Link from "next/link";
@@ -58,17 +58,8 @@ export default function Home() {
                 </div>
             </div>
 
-            <section className="flex items-center justify-center w-full mt-52 p-4">
-                <div className="max-w-4xl text-center">
-                    {/* <ProjectList /> */}
-                    {/* <h2 className="text-4xl font-bold mb-4">
-                        More Information Section (Or contact me)
-                    </h2>
-                    <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                        Placeholder for now, will add more information about me
-                        or a contact form, idk yet
-                    </p> */}
-                </div>
+            <section className="w-full my-40 p-4">
+                <ProjectList />
             </section>
         </div>
     );
