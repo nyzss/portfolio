@@ -8,16 +8,16 @@ export interface ProjectCardProps {
     liveUrl?: string;
 }
 
-const randomSeed = () => Math.round(Math.random() * 1000000).toString();
+// const randomSeed = () => Math.round(Math.random() * 1000000).toString();
 
-const randomAvatar = () =>
-    `https://api.dicebear.com/9.x/glass/svg?seed=${randomSeed()}`;
+// const randomAvatar = () =>
+//     `https://api.dicebear.com/9.x/glass/svg?seed=${randomSeed()}`;
 
 export const projects: ProjectCardProps[] = [
     {
         title: "Transcendence",
         description:
-            "Final project of 42's common core, creating a multiplayer Pong platform. Built with vanilla JavaScript for the frontend, Django and REST framework for the backend, and containerized with Docker for consistent deployment.",
+            "Transcendence is a real-time multiplayer Pong game with user authentication, live chat, and a leaderboard system. Built as the final project of the 42 common core curriculum, it demonstrates mastery of full-stack development, real-time systems, and user management.",
         imageUrl: "/projects/transcendence/1.png",
         link: "/projects/transcendence",
         technologies: [
@@ -28,16 +28,17 @@ export const projects: ProjectCardProps[] = [
             "Chart.js",
             "Git",
             "Nginx",
+            "Redis",
         ],
         githubUrl: "https://github.com/nyzss/transcendence",
     },
     {
-        title: "Webserv",
+        title: "Webserver",
         description:
-            "Creating a basic HTTP server. Built with C++ and containerized with Docker for consistent deployment.",
-        imageUrl: randomAvatar(),
-        link: "/projects/webserv",
-        technologies: ["C++", "JavaScript", "Python", "Git"],
-        githubUrl: "https://github.com/nyzss/webserv",
+            "WebServer is an HTTP/1.1 server implemented from scratch in C++98, designed to handle HTTP requests, responses, and dynamic content generation through CGI scripts. Concepts include socket programming, multiplexing, and HTTP protocol.",
+        imageUrl: "/projects/webserver/2.png",
+        link: "/projects/webserver",
+        technologies: ["C++", "Docker", "Git", "Unit-Testing", "HURL"],
+        githubUrl: "https://github.com/nyzss/webserver",
     },
 ];

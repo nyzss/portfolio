@@ -12,16 +12,18 @@ import path from "path";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { Github, LucideExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default async function ProjectView({
     params,
 }: {
     params: Promise<{ project: string }>;
 }) {
-    const project = (await params).project;
+    const project = (await params).project.toLowerCase();
 
     const currentProject = projects.find(
-        (p) => p.title.toLowerCase() === project.toLowerCase()
+        (p) => p.title.toLowerCase() === project
     );
     if (!currentProject) {
         return (
@@ -39,7 +41,7 @@ export default async function ProjectView({
     const testPath = path.resolve(
         process.cwd(),
         "public",
-        "projects/transcendence"
+        `projects/${project}`
     );
     const files = await readdir(testPath);
     return (
@@ -57,7 +59,7 @@ export default async function ProjectView({
             </div>
 
             <Carousel
-                className="w-full max-w-5xl mx-auto mb-8"
+                className="w-full max-w-5xl mx-auto mb-4"
                 opts={{
                     loop: true,
                 }}
@@ -68,11 +70,11 @@ export default async function ProjectView({
                             <Card>
                                 <CardContent className="flex aspect-video items-center justify-center p-1">
                                     <Image
-                                        src={`/projects/transcendence/${value}`}
+                                        src={`/projects/${project}/${value}`}
                                         alt={`Project image ${index + 1}`}
                                         width={1920}
                                         height={1080}
-                                        className="rounded-lg object-cover"
+                                        className="w-full rounded-lg object-cover"
                                     />
                                 </CardContent>
                             </Card>
@@ -84,7 +86,31 @@ export default async function ProjectView({
             </Carousel>
 
             <div className="max-w-5xl mx-auto">
-                <p className="text-lg mb-6">{currentProject.description}</p>
+                <div className="my-2">
+                    {currentProject.githubUrl && (
+                        <a
+                            href={currentProject.githubUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <Button variant={"outline"}>
+                                <Github />
+                            </Button>
+                        </a>
+                    )}
+                    {currentProject.liveUrl && (
+                        <a
+                            href={currentProject.liveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <LucideExternalLink />
+                        </a>
+                    )}
+                </div>
+                <p className="flex-1 text-lg mb-6">
+                    {currentProject.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2">
                     {currentProject.technologies.map((tag, index) => (
