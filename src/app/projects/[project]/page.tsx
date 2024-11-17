@@ -45,8 +45,8 @@ export default async function ProjectView({
     );
     const files = await readdir(testPath);
     return (
-        <div className="container mx-auto px-4">
-            <div className="w-full mx-auto max-w-5xl mt-4">
+        <div className="container mx-auto px-4 max-w-4xl">
+            <div className="w-full mx-auto mt-4">
                 <Link
                     href="/projects"
                     className="self-start text-xl text-teal-400 hover:text-teal-500 hover:underline"
@@ -59,7 +59,7 @@ export default async function ProjectView({
             </div>
 
             <Carousel
-                className="w-full max-w-5xl mx-auto mb-4"
+                className="w-full mx-auto"
                 opts={{
                     loop: true,
                 }}
@@ -85,8 +85,8 @@ export default async function ProjectView({
                 <CarouselNext className="hidden sm:flex" />
             </Carousel>
 
-            <div className="max-w-5xl mx-auto">
-                <div className="my-2">
+            <div className="mx-auto mt-2">
+                <div className="mb-3">
                     {currentProject.githubUrl && (
                         <a
                             href={currentProject.githubUrl}
@@ -108,7 +108,7 @@ export default async function ProjectView({
                         </a>
                     )}
                 </div>
-                <p className="flex-1 text-lg mb-6">
+                <p className="flex-1 text-lg mb-3">
                     {currentProject.description}
                 </p>
 
