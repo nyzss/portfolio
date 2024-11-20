@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import MouseFollow from "@/components/effects/mouse";
 import { Providers } from "@/components/effects/transition";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -48,6 +49,7 @@ export default function RootLayout({
                         <Toaster />
                     </Providers>
                 </ThemeProvider>
+                <Analytics />
             </body>
         </html>
     );

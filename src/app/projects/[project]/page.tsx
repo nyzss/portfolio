@@ -112,7 +112,7 @@ export default async function ProjectView({
                     {currentProject.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 select-none">
                     {currentProject.technologies.map((tag, index) => (
                         <Badge key={index} variant="secondary">
                             {tag}
