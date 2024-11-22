@@ -86,7 +86,7 @@ export default async function ProjectView({
             </Carousel>
 
             <div className="mx-auto mt-2">
-                <div className="mb-3">
+                <div className="mb-3 flex gap-2">
                     {currentProject.githubUrl && (
                         <a
                             href={currentProject.githubUrl}
@@ -104,7 +104,9 @@ export default async function ProjectView({
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <LucideExternalLink />
+                            <Button variant={"outline"}>
+                                <LucideExternalLink />
+                            </Button>
                         </a>
                     )}
                 </div>
