@@ -8,11 +8,6 @@ export interface ProjectCardProps {
     liveUrl?: string;
 }
 
-// const randomSeed = () => Math.round(Math.random() * 1000000).toString();
-
-// const randomAvatar = () =>
-//     `https://api.dicebear.com/9.x/glass/svg?seed=${randomSeed()}`;
-
 export const projects: ProjectCardProps[] = [
     {
         title: "Transcendence",
@@ -40,5 +35,22 @@ export const projects: ProjectCardProps[] = [
         link: "/projects/webserver",
         technologies: ["C++", "Docker", "Git", "Unit-Testing", "HURL"],
         githubUrl: "https://github.com/nyzss/webserver",
+    },
+    {
+        title: "Le-Mini-Chat",
+        description:
+            "A real-time mini chat application built with Next.js, shadcn, and Tailwind CSS. This project leverages the Mistral API for backend communication and includes both frontend and backend implementations. It features chat-specific components, markdown rendering, and state management.",
+        imageUrl: "/projects/le-mini-chat/1.png",
+        link: "/projects/le-mini-chat",
+        technologies: [
+            "Next.js",
+            "shadcn/ui",
+            "Tailwind CSS",
+            "Zod",
+            "Jotai",
+            "Node.js",
+        ],
+        githubUrl: "https://github.com/nyzss/mistral-chat",
+        liveUrl: "https://chat.okankoca.dev",
     },
 ];
