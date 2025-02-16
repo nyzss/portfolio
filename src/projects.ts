@@ -53,4 +53,20 @@ export const projects: ProjectCardProps[] = [
         githubUrl: "https://github.com/nyzss/mistral-chat",
         liveUrl: "https://chat.okankoca.dev",
     },
+    {
+        title: "SensorStack",
+        description:
+            "SensorStack is a platform for managing and visualizing sensor data. It allows users to upload, store, and visualize sensor data in real-time.",
+        imageUrl: "/projects/sensorstack/1.png",
+        link: "/projects/sensorstack",
+        technologies: [
+            "Next.js",
+            "shadcn/ui",
+            "Tailwind CSS",
+            "Zod",
+            "Supabase",
+        ],
+        githubUrl: "https://github.com/nyzss/sensorstack",
+        liveUrl: "https://sensorstack.vercel.app/",
+    },
 ];

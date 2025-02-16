@@ -1,4 +1,4 @@
-import { projects } from "@/components/projects/projects";
+import { projects } from "@/projects";
 import Link from "next/link";
 import {
     Carousel,
@@ -45,7 +45,7 @@ export default async function ProjectView({
     );
     const files = await readdir(testPath);
     return (
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-4xl my-12">
             <div className="w-full mx-auto mt-4">
                 <Link
                     href="/projects"
@@ -74,7 +74,7 @@ export default async function ProjectView({
                                         alt={`Project image ${index + 1}`}
                                         width={1920}
                                         height={1080}
-                                        className="w-full rounded-lg object-cover"
+                                        className="aspect-video w-full rounded-lg object-cover"
                                     />
                                 </CardContent>
                             </Card>
