@@ -69,4 +69,26 @@ export const projects: ProjectCardProps[] = [
         githubUrl: "https://github.com/nyzss/sensorstack",
         liveUrl: "https://sensorstack.vercel.app/",
     },
+    {
+        title: "Matchmaker-AI",
+        description:
+            "A real-time web application that matches candidate and job applications based on their skills and preferences. With slack integration.",
+        imageUrl: "/projects/matchmaker-ai/1.png",
+        link: "/projects/matchmaker-ai",
+        technologies: [
+            "Turborepo",
+            "Next.js",
+            "Inngest",
+            "Better-Auth",
+            "Hono",
+            "Cloudflare Workers",
+            "Drizzle",
+            "Neon",
+            "shadcn/ui",
+            "Tailwind CSS",
+            "Zod",
+            "Slack",
+        ],
+        githubUrl: "https://github.com/nyzss/matchmaker-ai",
+    },
 ];
